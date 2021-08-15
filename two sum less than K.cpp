@@ -6,6 +6,7 @@ find max sum possible = 58
  int maxsum = INT_MIN;
  int i = 0 ; 
  int j = nums.sizE()-1;
+ sort(nums.begin(), nums.end());
  while(i<j){
      if(a[i] + a[j] < k){
          maxsum = max(maxsum, a[i] + a[j]);
