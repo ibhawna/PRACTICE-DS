@@ -15,4 +15,31 @@ public:
         
         
     }
-};
+};  // TC = O(N)
+// SC = O(N)
+
+
+// SORTING
+
+    sort(arr, arr + n);
+ 
+    int low = 0;
+    int high = n - 1;
+ 
+   
+    while (low < high)
+    {
+        if (arr[low] + arr[high] == sum)
+        {
+            cout << "Pair found (" << arr[low] << ", " << arr[high] << ")" << endl;
+            return;
+        }
+ 
+        
+        (arr[low] + arr[high] < sum)? low++: high--;
+    }
+ 
+    
+    cout << "Pair not found";
+    // O(N LOGN) - TC
+    // O(1) = SC
