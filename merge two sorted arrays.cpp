@@ -32,3 +32,5 @@ make an arr3 of size n+m, then insert all elements from arr1 and arr2 to it. sor
  using insertion .
  one pointer at a1[0] and other at a2[0]
  if(a[i] > a[j]) swap( these two ) and i++ and if(a2[i] > a2[i-1], swap so they remain sorted ) and continue this process 
+
+ // GAP METHOD (using basics of SHELL SORT)
