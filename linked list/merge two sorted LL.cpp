@@ -11,36 +11,55 @@
 class Solution {
 public:
     ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
-        ListNode* d = new ListNode(-1);
+//         ListNode* d = new ListNode(-1);
+//         ListNode* h1 = l1;
+//         ListNode* h2 = l2;
+//         ListNode* prev = d;
+//         while( h1 != NULL && h2 != NULL){
+//             if(h1 -> val > h2->val){
+//                 prev->next = h2;
+                
+//                 h2 = h2->next;
+//             }
+//                else{
+//                    prev->next = h1;
+                  
+//                    h1 = h1->next;
+//                }
+//             prev =prev->next;
+//         }
+        
+//         while(h1 != NULL){
+//             prev->next = h1;
+//             h1 = h1->next;
+//             prev = prev->next;
+//         }
+//         while(h2 != NULL){
+//             prev->next = h2;
+//             h2 = h2->next;
+//             prev = prev->next;
+//         }
+//         // prev->next = (h1 != NULL) ? h1 : h2;
+//         return d->next;   
+        
+//          recursive
         ListNode* h1 = l1;
         ListNode* h2 = l2;
-        ListNode* prev = d;
-        while( h1 != NULL && h2 != NULL){
-            if(h1 -> val > h2->val){
-                prev->next = h2;
-                
-                h2 = h2->next;
-            }
-               else{
-                   prev->next = h1;
-                  
-                   h1 = h1->next;
-               }
-            prev =prev->next;
+        if(h1 == NULL){
+            return h2;
+        }
+        if(h2 == NULL){
+            return h1;
+        }
+        if(h1->val < h2->val){
+            h1->next = mergeTwoLists(h1->next, h2);
+            return h1;
+        }
+        else{
+            h2->next = mergeTwoLists(h2->next, h1);
+            return h2;
         }
         
-        while(h1 != NULL){
-            prev->next = h1;
-            h1 = h1->next;
-            prev = prev->next;
-        }
-        while(h2 != NULL){
-            prev->next = h2;
-            h2 = h2->next;
-            prev = prev->next;
-        }
-        // prev->next = (h1 != NULL) ? h1 : h2;
-        return d->next;        
                
     }
 };
