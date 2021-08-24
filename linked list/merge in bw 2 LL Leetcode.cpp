@@ -34,6 +34,12 @@ public:
             h2 = h2->next;
         }
         h2->next = B->next;
+        while(A != B){
+            ListNode* del = A;
+            A = A->next;
+            delete del;
+        }
+        delete B;
         return list1;
         
         
