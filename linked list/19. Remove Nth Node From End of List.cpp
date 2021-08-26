@@ -1,4 +1,4 @@
-//more optimal
+//more optimal 
 ListNode* removeNthFromEnd(ListNode* head, int n) {
         
         ListNode* dummy = new ListNode();
@@ -20,8 +20,8 @@ ListNode* removeNthFromEnd(ListNode* head, int n) {
 
 
 
-    
-// less optimal
+
+// less optimal 0(2*N)
 ListNode* removeNthFromEnd(ListNode* head, int n) {
         if( head == NULL){
             return head;
