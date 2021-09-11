@@ -26,9 +26,23 @@ public:
         
         //count std::count() returns number of occurrences of an element in a given range. Returns the number of elements in the range [first,last) that compare equal to val.
         // int count(Iterator first, Iterator last, T &val)
+        
+        // int ans = 0;
+        // for(int i =0; i<jewels.size(); i++){
+        //     ans += count(stones.begin(), stones.end(), jewels[i]);
+        // }
+        // return ans;
+        
+        // array
+        vector<bool> arr(58,false);
         int ans = 0;
         for(int i =0; i<jewels.size(); i++){
-            ans += count(stones.begin(), stones.end(), jewels[i]);
+            arr[jewels[i] - 65] = true;
+        }
+        for(int i =0; i < stones.size(); i++){
+            if(arr[stones[i] - 65] == true){
+                ans++;
+            }
         }
         return ans;
         
