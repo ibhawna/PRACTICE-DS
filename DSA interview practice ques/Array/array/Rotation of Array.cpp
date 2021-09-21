@@ -1,4 +1,4 @@
-// rotate by using temp array  -- o(n) space + o(n) time
+// rotate by using temp array  -- o(1) space + o(n) time
 
 // rotate one by one, keep the order of rotation in mind. //time complexity = o(n * k) --> k == no. of rotations. space = o(1)
 
