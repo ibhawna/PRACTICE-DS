@@ -1,0 +1,35 @@
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+        //kadane algo
+        int maxsum  = nums[0];
+        int max_so_far =  nums[0];
+        for(int i = 1; i < nums.size(); i++){
+            max_so_far = max(nums[i], max_so_far + nums[i]);
+            maxsum = max(maxsum, max_so_far);
+        }
+        return maxsum;
+    }
+};
+
+
+//kadane to print max sum and print sub array
+        int sum =0;
+        // int left;
+        // int right;
+        int largestsum = INT_MIN;
+        for(int i =0; i<nums.size(); i++){
+            sum +=nums[i];
+            largestsum = max(largestsum, sum);
+            // right = i;
+            if(sum<0){
+                sum =0;
+                // left = i;
+                
+            }
+        }
+        // for(int i = left+1; i<right; i++){
+        //     cout<<nums[i]<<" ";
+        // }
+        return largestsum;
+        
